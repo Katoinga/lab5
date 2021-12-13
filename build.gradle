@@ -10,18 +10,19 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+    plugins {
+        id "org.sonarqube" version "3.3"
+    }
+
+    sonarqube {
+        properties {
+            property "sonar.projectKey", "ejemplox1"
+        }
+    }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-plugins {
-  id "org.sonarqube" version "3.3"
-}
 
-sonarqube {
-  properties {
-    property "sonar.projectKey", "ejemplox1"
-  }
-}
